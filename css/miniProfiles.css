@@ -1,0 +1,50 @@
+.form-group {
+  margin: 0px;
+}
+
+
+
+
+a.list-group-item {
+    height:auto;
+    min-height:220px;
+    margin:20px auto 1px;
+    padding: 35px 0px;
+}
+a.list-group-item.active {
+    color: #fff;
+    background-color: #e3e3e3;
+    border: none;
+}
+/* turns blue text black */
+.list-group-item .noLeftPad p.list-group-item-text {
+    color:#000;
+}
+
+/* moves all text to the left */
+.noLeftPad {
+  padding-left: 0px;
+}
+
+.endingCol {
+    margin:5% 0px;
+}
+
+
+
+
+.mainTextBox {
+  margin:5% 0px;
+  height: 95vh;
+  overflow-y: hidden;
+  overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
