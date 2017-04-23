@@ -36,6 +36,62 @@
 
 
   <body id="mainStuff">
+    <div id="fb-root"></div>
+    <script>
+
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1781961102019556',
+          xfbml      : true,
+          version    : 'v2.9'
+        });
+        FB.AppEvents.logPageView();
+
+        //To determine if a user has authenticated your app:
+        FB.getLoginStatus(function(response) {
+          if (response.status === 'connected') {
+            // the user is logged in and has authenticated your
+            // app, and response.authResponse supplies
+            // the user's ID, a valid access token, a signed
+            // request, and the time the access token
+            // and signed request each expire
+            var uid = response.authResponse.userID;
+            var accessToken = response.authResponse.accessToken;
+            window.location = "../shadchanapp_web/createMatches.php";
+          } else if (response.status === 'not_authorized') {
+            // the user is logged in to Facebook,
+            // but has not authenticated your app
+          } else {
+            // the user isn't logged in to Facebook.
+            //FB.login()
+          }
+         });
+
+
+
+
+      };
+
+
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=1781961102019556";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+    </script>
+
+
+
+
+
+
 
 
 
@@ -54,13 +110,22 @@
 
 
             <div id="mainTextBox" class="inner cover well well-lg" >
-              <h1 class="cover-heading">You are the Shadchan</h1>
+              <h1 class="cover-heading">Be a Shadchan, It’s Fun!</h1>
             </br>
-              <p class="lead">Tinder is being turned on its keppeleh,</br>in this new twist where friends are connecting friends!</p>
+              <p class="lead">Tinder is being turned on its keppeleh</br>in this new twist where friends are connecting friends!</p>
               <h3><small>Signup and join the revolution!</small></h3>
 
 
 
+
+
+              <!-- Facebook login or logout button -->
+              <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+
+
+
+
+<!--
               <form>
                 <div class="form-group">
                   <div id="formGroupExampleInput3">
@@ -69,6 +134,7 @@
                   </div>
                 </div>
               </form>
+-->
 
             </div>
 
