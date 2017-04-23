@@ -13,7 +13,6 @@
 
 
 
-
           <!--
 
           <div class="masthead clearfix">
@@ -43,7 +42,7 @@
               <div class="form-group">
                 <div id="formGroupExampleInput3">
                   <a class="btn btn-lg btn-primary" href="signup.php">Facebook</a>
-                  <a class="btn btn-lg btn-primary" href="video.php">Video</a>
+                  <a class="btn btn-lg btn-primary" href="video.php">Login</a>
                 </div>
               </div>
             </form>
