@@ -1,18 +1,13 @@
 <?php include 'top.html'; ?>
-
   <body>
-
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="container-fluid">
-
           <div class="row">
-
             <div class="col-md-3">
-
-              <div class="inner cover well well-lg endingCol" >
+              <div class="inner cover well well-lg endingCol">
                 <h1 class="cover-heading">Welcome, Binny!</h1>
-              </br>
+                <br />
                 <p class="lead">The power is in your hands to help your friends find suitable suitors!</p>
                 <h2>Its lots of fun!</h2>
                 <a href="suggestions.php" class="btn btn-success btn-lg" role="button">My Suggestions</a>
