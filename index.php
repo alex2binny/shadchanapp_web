@@ -1,7 +1,5 @@
 <?php include 'top.html'; ?>
 
-</head>
-
   <body>
 
 
