@@ -4,13 +4,11 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
           <div id="mainTextBox" class="inner cover well well-lg" >
-            <h1 class="cover-heading">Welcome!</h1>
+            <h1 class="cover-heading">Congratulations,</h1>
 
             <br />
 
-            <p class="lead">We are creating a robust set of tools to allow anyone to be a successful shadchan.</p>
-
-            <h2>Yes, Even You!</h2>
+            <p class="lead">You are now ready to use the Shadchan App!</p>
 
             <br />
 
@@ -19,13 +17,13 @@
                 <div id="formGroupExampleInput1">
 
                   <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-warning" style="pointer-events: none;">
+                    <label class="btn btn-basic" style="pointer-events: none;">
                       <input type="radio" name="options" id="option1" autocomplete="off" required /> Are You Dating?
                     </label>
-                    <label class="btn btn-primary active">
+                    <label class="btn btn-success active">
                       <input type="radio" name="options" id="option2" autocomplete="on" /> Yes
                     </label>
-                    <label class="btn btn-primary">
+                    <label class="btn btn-warning">
                       <input type="radio" name="options" id="option3" autocomplete="off" /> No
                     </label>
                   </div>
@@ -41,7 +39,7 @@
                   <br><br><br>
 
                   <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-warning" style="pointer-events: none;">
+                    <label class="btn btn-basic" style="pointer-events: none;">
                       <input type="radio" name="options" id="gender-select" autocomplete="off" required /> Gender:
                     </label>
                     <label class="btn btn-info active">

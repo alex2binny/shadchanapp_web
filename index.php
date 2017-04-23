@@ -79,17 +79,17 @@
 
           <div class="fb-login-button" data-width="150" data-max-rows="1" data-size="large" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
 
+          <br><br><br>
 
 
-  <!--
             <form>
               <div class="form-group">
                 <div id="formGroupExampleInput3">
-                  <a class="btn btn-lg btn-primary" href="signup.php">Facebook</a>
+                  <a class="btn btn-lg btn-primary" href="signup.php">Next Page</a>
                 </div>
               </div>
             </form>
-  -->
+
 
 
           </div>
