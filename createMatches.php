@@ -1,4 +1,7 @@
-<?php include 'top.html'; ?>
+<?php
+include 'User.php';
+include 'top.html';
+?>
   <body>
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
@@ -13,41 +16,38 @@
                 <a href="suggestions.php" class="btn btn-success btn-lg" role="button">My Suggestions</a>
               </div>
 
-
-
               <a id="rightArrow" class="bothArrows" href="#">
                 <button type="button" class="btn btn-success btn-arrow-right">Suggest</button>
               </a>
-
             </div>
 
-
-
-
             <div class="col-md-3 scroll-wrapper">
-
               <div class="inner cover well well-lg mainTextBox scroller" >
-
-
-
-                <div class="row" >
-                <a data-toggle="modal" data-target="#myModal" href="#" class="list-group-item active linkForModal">
+              <?php foreach([
+                new User("Yankel", "Feffelkorn", 22, "New York, NY", "css/images/user.png", '"To be or not to be, that is a question" -- some guy'),
+                new User("Yunger", "Bachur", 21, "San Fransisco, CA", "css/images/user.png", '"Sweet and eidel, Yunger was captain of the Basketball team at YU"'),
+                new User("Jordan", "Smith", 25, "San Fransisco, CA", "css/images/user.png", "Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim."),
+                new User("Yoily", "Twefaice", 26, "San Fransicso, CA", "css/images/user.png", "Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim."),
+                new User("John", "Greenberg", 26, "San Francisco, CA", "css/images/user.png", "Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim.")
+              ] as $user) { ?>
+                <div class="row">
+                  <a data-toggle="modal" data-target="#myModal" href="#" class="list-group-item active linkForModal">
                     <div class="media col-md-4">
-                      <img class="media-object img-rounded img-responsive"  src="css/images/user.png" alt="placehold.it/350x250" >
+                      <img class="media-object img-rounded img-responsive"  src="<?= $user->getLinkToProfilePicture() ?>" alt="placehold.it/350x250" >
                     </div>
                     <div class="col-md-8 noLeftPad" >
                       <div class="form">
                         <div class="form-group" style="font-size:1.25em;margin-bottom: 0px;">
-                          <label for="name" class="control-label">Yankel Feffelkorn</label>
-                          <input type="hidden" class="form-control" id="name" name="name" value="Yankel Feffelkorn"/>
+                          <label for="name" class="control-label"><?= $user->getFirstName() . ' ' . $user->getLastName() ?></label>
+                          <input type="hidden" class="form-control" id="name" name="name" value="<?= $user->getFirstName() . ' ' . $user->getLastName() ?>"/>
                         </div>
                         <div class="form-group">
-                          <label class="control-label" for="message">"To be or not to be, that is a question" -- some guy</label>
+                          <label class="control-label" for="message"><?= $user->getAbout() ?></label>
                       		<input type="hidden" class="form-control hidden" cols="40" id="message" name="message" rows="10" value="'To be or not to be, that is a question' -- some guy"></input>
                         </div>
                         <div class="form-group">
-                          <label for="location"><small>New York, NY<i class="glyphicon glyphicon-map-marker"></i>22 yrs old </small></label>
-                          <input type="hidden" class="form-control" id="location" name="location" value="New York, NY"></input>
+                          <label for="location"><small><?= $user->getLocation() ?><i class="glyphicon glyphicon-map-marker"></i><?= $user->getAge() ?> yrs old </small></label>
+                          <input type="hidden" class="form-control" id="location" name="location" value="<?= $user->getLocation() ?>"></input>
                         </div>
                         <div class="form-group"> <!-- Submit button !-->
                           <button type="submit" class="btn btn-info btn-lg">See Profile</button>
@@ -57,128 +57,7 @@
                   </a>
                 </div>
 
-
-
-
-
-
-                <div class="row" >
-                <a data-toggle="modal" data-target="#myModal" href="#" class="list-group-item active linkForModal">
-                    <div class="media col-md-4">
-                      <img class="media-object img-rounded img-responsive"  src="css/images/user.png" alt="placehold.it/350x250" >
-                    </div>
-                    <div class="col-md-8 noLeftPad" >
-                      <div class="form">
-                        <div class="form-group" style="font-size:1.25em;margin-bottom: 0px;">
-                          <label for="name" class="control-label">Yunger Bachur</label>
-                          <input type="hidden" class="form-control" id="name" name="name" value="Yunger Bachur"/>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label" for="message">"Sweet and eidel, Yunger was captain of the Basketball team at YU"</label>
-                      		<input type="hidden" class="form-control hidden" cols="40" id="message" name="message" rows="10" value="Sweet and eidel, Yunger was captain of the Basketball team at YU"></input>
-                        </div>
-                        <div class="form-group">
-                          <label for="location"><small>San Francisco, CA <i class="glyphicon glyphicon-map-marker"></i>26 yrs old </small></label>
-                          <input type="hidden" class="form-control" id="location" name="location" value="San Francisco, USA"></input>
-                        </div>
-                        <div class="form-group"> <!-- Submit button !-->
-                          <button type="submit" class="btn btn-info btn-lg">See Profile</button>
-                        </div>
-                       </div>
-                    </div>
-                  </a>
-                </div>
-
-
-
-
-
-                <div class="row" >
-                <a data-toggle="modal" data-target="#myModal" href="#" class="list-group-item active linkForModal">
-                    <div class="media col-md-4">
-                      <img class="media-object img-rounded img-responsive"  src="css/images/user.png" alt="placehold.it/350x250" >
-                    </div>
-                    <div class="col-md-8 noLeftPad" >
-                      <div class="form">
-                        <div class="form-group" style="font-size:1.25em;margin-bottom: 0px;">
-                          <label for="name" class="control-label">Jordan Smith</label>
-                          <input type="hidden" class="form-control" id="name" name="name" value="Jordan Smith"/>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label" for="message">Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim.</label>
-                      		<input type="hidden" class="form-control hidden" cols="40" id="message" name="message" rows="10" value="Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim."></input>
-                        </div>
-                        <div class="form-group">
-                          <label for="location"><small>San Francisco, CA <i class="glyphicon glyphicon-map-marker"></i>26 yrs old </small></label>
-                          <input type="hidden" class="form-control" id="location" name="location" value="San Francisco, USA"></input>
-                        </div>
-                        <div class="form-group"> <!-- Submit button !-->
-                          <button type="submit" class="btn btn-info btn-lg">See Profile</button>
-                        </div>
-                       </div>
-                    </div>
-                  </a>
-                </div>
-
-
-
-
-                <div class="row" >
-                <a data-toggle="modal" data-target="#myModal" href="#" class="list-group-item active linkForModal">
-                    <div class="media col-md-4">
-                      <img class="media-object img-rounded img-responsive"  src="css/images/user.png" alt="placehold.it/350x250" >
-                    </div>
-                    <div class="col-md-8 noLeftPad" >
-                      <div class="form">
-                        <div class="form-group" style="font-size:1.25em;margin-bottom: 0px;">
-                          <label for="name" class="control-label">Yoily Twefaice</label>
-                          <input type="hidden" class="form-control" id="name" name="name" value="Yoily Twefaice"/>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label" for="message">Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim.</label>
-                      		<input type="hidden" class="form-control hidden" cols="40" id="message" name="message" rows="10" value="Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim."></input>
-                        </div>
-                        <div class="form-group">
-                          <label for="location"><small>San Francisco, CA <i class="glyphicon glyphicon-map-marker"></i>26 yrs old </small></label>
-                          <input type="hidden" class="form-control" id="location" name="location" value="San Francisco, USA"></input>
-                        </div>
-                        <div class="form-group"> <!-- Submit button !-->
-                          <button type="submit" class="btn btn-info btn-lg">See Profile</button>
-                        </div>
-                       </div>
-                    </div>
-                  </a>
-                </div>
-
-
-
-                <div class="row" >
-                <a data-toggle="modal" data-target="#myModal" href="#" class="list-group-item active linkForModal">
-                    <div class="media col-md-4">
-                      <img class="media-object img-rounded img-responsive"  src="css/images/user.png" alt="placehold.it/350x250" >
-                    </div>
-                    <div class="col-md-8 noLeftPad" >
-                      <div class="form">
-                        <div class="form-group" style="font-size:1.25em;margin-bottom: 0px;">
-                          <label for="name" class="control-label">John Greenberg</label>
-                          <input type="hidden" class="form-control" id="name" name="name" value="John Greenberg"/>
-                        </div>
-                        <div class="form-group">
-                          <label class="control-label" for="message">Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim.</label>
-                      		<input type="hidden" class="form-control hidden" cols="40" id="message" name="message" rows="10" value="Qui diam libris ei, vidisse incorrupte at melcum, sale tantas vim ea, eu vivendo expetendis vim."></input>
-                        </div>
-                        <div class="form-group">
-                          <label for="location"><small>San Francisco, CA <i class="glyphicon glyphicon-map-marker"></i>26 yrs old </small></label>
-                          <input type="hidden" class="form-control" id="location" name="location" value="San Francisco, USA"></input>
-                        </div>
-                        <div class="form-group"> <!-- Submit button !-->
-                          <button type="submit" class="btn btn-info btn-lg">See Profile</button>
-                        </div>
-                       </div>
-                    </div>
-                  </a>
-                </div>
-
+                <?php } ?>
 
 
 
