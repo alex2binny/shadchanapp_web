@@ -40,7 +40,7 @@
               <div class="form-group">
                 <div id="formGroupExampleInput3">
                   <a class="btn btn-lg btn-primary" href="signup.php">Facebook</a>
-                  <a class="btn btn-lg btn-primary" href="video.php">Login</a>
+                  <a class="btn btn-lg btn-primary" href="createMatches.php">Login</a>
                 </div>
               </div>
             </form>

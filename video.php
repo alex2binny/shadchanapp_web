@@ -18,15 +18,13 @@
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/cover.css" rel="stylesheet">
     <link href="css/myStuff.css" rel="stylesheet">
     <link href="css/miniProfiles.css" rel="stylesheet">
 
-    <!-- Custom styles added by Binny Lewis -->
-    <!--
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    -->
-    <link href="css/arrows.css" rel="stylesheet">
+    <!-- special css for video play -->
+    <link href="css/video-back.css" rel="stylesheet">
+
+
 
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -34,14 +32,11 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+</head>
 
-    <link href="css/video-back.css" rel="stylesheet">
-
-
-
-  </head>
 
   <body id="mainStuff">
+
 
 
     <div class="site-wrapper">
@@ -78,9 +73,9 @@
             </div>
 
 
-          <video autoplay="" loop="" class="fillWidth fadeIn animated" poster="https://s3-us-west-2.amazonaws.com/coverr/poster/Traffic-blurred2.jpg" id="video-background">
-              <source src="videos/Good-Mood.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
-          </video>
+            <video autoplay loop id="video-background" muted>
+              <source src="videos/Good-Mood.mp4" type="video/mp4">
+            </video>
 
 
 
