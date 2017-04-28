@@ -1,6 +1,20 @@
 <?php
+include 'config.php';
 include 'User.php';
 include 'top.html';
+
+$ch = curl_init(API_HOSTNAME . ":" . API_PORT . "/user/view_profile/" . $_POST["fbid"]);
+
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+
+$profile = curl_exec($ch);
+
+switch (curl_errno($ch)) {
+  case 7:
+    echo "Error connecting to server.";
+}
+
+curl_close($ch);
 ?>
   <body>
     <div class="site-wrapper">
@@ -9,7 +23,7 @@ include 'top.html';
           <div class="row">
             <div class="col-md-3">
               <div class="inner cover well well-lg endingCol">
-                <h1 class="cover-heading">Welcome, Binny!</h1>
+                <h1 class="cover-heading">Welcome, <?=$profile->firstName?>!</h1>
                 <br />
                 <p class="lead">The power is in your hands to help your friends find suitable suitors!</p>
                 <h2>Its lots of fun!</h2>
